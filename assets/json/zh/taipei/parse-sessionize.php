@@ -21,7 +21,7 @@ foreach ($json->{'rooms'} as $room) {
   }
 
   $result['tracks'][] = array(
-    'id' => $room->{'id'},
+    'id' => '' . $room->{'id'},
     'title' => $track_name
   );
 }
@@ -60,7 +60,7 @@ foreach ($json->{'sessions'} as $session) {
     'session_desc' => $session->{'description'},
     // 一個 session 可能不只一個講者
     'speaker_id' => $session->{'speakers'}[0],
-    'track_id' => $session->{'roomId'},
+    'track_id' => '' . $session->{'roomId'},
     'tags' => $tags,
     'links' => array(
       'presentation' => '',
